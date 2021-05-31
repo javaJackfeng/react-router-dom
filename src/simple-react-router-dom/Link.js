@@ -8,23 +8,14 @@ export const resolveToLocation = (to, currentLocation) =>
 class Link extends React.Component {
     static contextType = RouterContext
     handleClick = (e) => {
-        try {
-            e.preventDefault()
-            const { replace = false } = this.props
-            const location = resolveToLocation(this.props.to, this.context.location)
-            let method = this.context.history.push
-            if (replace) {
-                method = this.context.history.replace
-            }
-            
-            console.log('method', this.context)
-            if (typeof method === 'function') {
-                method(location)
-            }
-        } catch (ex) {
-            e.preventDefault();
-            throw ex;
+        e.preventDefault()
+        const { replace = false } = this.props
+        const location = resolveToLocation(this.props.to, this.context.location)
+        let method = this.context.history.push
+        if (replace) {
+            method = this.context.history.replace
         }
+        method(location)
     }
     render() {
         const { children, to, ...restProps } = this.props
