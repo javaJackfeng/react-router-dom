@@ -20,7 +20,7 @@ class Link extends React.Component {
     render() {
         const { children, to, ...restProps } = this.props
         return (
-            <a href={to} onClick={this.handleClick} {...restProps}>
+            <a onClick={this.handleClick} {...restProps}>
                 {children}
             </a>
         )
