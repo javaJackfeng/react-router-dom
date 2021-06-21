@@ -9,7 +9,7 @@ class Router extends React.Component {
     super(props)
     this.state = { location: props.history.location }
     this.unlisten = props.history.listen((location) => {
-      this.setState({ location: location })
+      this.setState({ location })
     })
   }
 
