@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Prompt } from './simple-react-router-dom'
+import { Link, Prompt, Redirect } from './simple-react-router-dom'
 import withRouter from './simple-react-router-dom/withRouter'
 
 
@@ -10,11 +10,10 @@ class Product extends React.Component {
             <div>
                 <h3>Product</h3>
                 <Link to="/">go home</Link>
-                {/* 实现的Prompt存在问题 */}
-                {/* <Prompt
+                <Prompt
                     when={this.state.confirm}
                     message = 'Are you sure you want to go to'
-                /> */}
+                />
             </div>
         )
     }
